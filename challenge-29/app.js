@@ -25,10 +25,15 @@
         carList.push(car);
         renderCarList();
       }
+
+      function removeCar(index) {
+        carList.splice(index, 1)
+        renderCarList();
+      }
   
       function renderCarList() {
         $carList.html('');
-        carList.forEach(function(car) {
+        carList.forEach(function(car, index) {
           let tr = document.createElement('tr');
   
           let tdImage = document.createElement('td');
@@ -48,12 +53,23 @@
   
           let tdColor = document.createElement('td');
           tdColor.textContent = car.color;
+
+          let tdDelete = document.createElement('td');
+          let deleteButton = document.createElement('button');
+          deleteButton.textContent = 'Remover';
+
+          deleteButton.addEventListener('click', function () {
+            removeCar(index);
+          });
+      
+          tdDelete.appendChild(deleteButton);      
   
           tr.appendChild(tdImage);
           tr.appendChild(tdBrand);
           tr.appendChild(tdYear);
           tr.appendChild(tdPlate);
           tr.appendChild(tdColor);
+          tr.appendChild(tdDelete);
   
           $carList.append(tr);
         });
