@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 29</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <header>
+        <h1 id="company-name"></h1>
+        <p id="company-phone"></p>
+    </header>
+
+    <form id="car-form">
+        <input type="url" id="car-image" placeholder="Imagem do carro (URL)" required />
+        <input type="text" id="car-brand" placeholder="Marca / Modelo" required />
+        <input type="number" id="car-year" placeholder="Ano" required />
+        <input type="text" id="car-plate" placeholder="Placa" required />
+        <input type="text" id="car-color" placeholder="Cor" required />
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Imagem</th>
+                <th>Marca / Modelo</th>
+                <th>Ano</th>
+                <th>Placa</th>
+                <th>Cor</th>
+                <th>Remover</th>
+            </tr>
+        </thead>
+        <tbody id="car-list"></tbody>
+    </table>
+
+    <script src="./DOM/DOM.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
